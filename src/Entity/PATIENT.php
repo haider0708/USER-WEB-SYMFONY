@@ -75,6 +75,13 @@ class PATIENT implements UserInterface, PasswordAuthenticatedUserInterface
     #[Assert\NotBlank]
     private ?string $address = null;
 
+    #[ORM\Column(type: 'boolean')]
+    private $is_verified = false;
+
+    #[ORM\Column(type: 'string', length: 100, nullable: true)]
+    private $resetToken;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -246,5 +253,28 @@ class PATIENT implements UserInterface, PasswordAuthenticatedUserInterface
         $this->address = $address;
 
         return $this;
+    }
+
+    public function getIsVerified(): ?bool
+    {
+        return $this->is_verified;
+    }
+
+    public function setIsVerified(bool $is_verified): self
+    {
+        $this->is_verified = $is_verified;
+
+        return $this;
+    }
+
+    public function getResetToken(): ?string
+    {
+    return $this->resetToken;
+    }
+
+public function setResetToken(?string $resetToken): self
+    {
+    $this->resetToken = $resetToken;
+    return $this;
     }
 }

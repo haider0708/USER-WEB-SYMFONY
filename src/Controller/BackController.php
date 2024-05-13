@@ -184,4 +184,23 @@ class BackController extends AbstractController
         
         return $this->redirectToRoute('app_affiche_patient');
     }
+
+    #[Route('/triec', name: 'triecroissant')]
+    public function trierparNomcroissant(PATIENTRepository $repository): Response
+    {
+      $patient=$repository->triecroissant();
+        return $this->render('back/affiche_patient.html.twig', [
+            "patient"=> $patient
+        ]);
+
+    }
+    #[Route('/tried', name: 'triedecroissant')]
+    public function trierparnomdecroissant(PATIENTRepository $repository): Response
+    {
+        $patient=$repository->triedecroissant();
+        return $this->render('back/affiche_patient.html.twig', [
+            "patient"=>$patient
+        ]);
+
+    }
 }
