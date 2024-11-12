@@ -89,7 +89,4 @@ The application supports encrypted user data, secure login, role-based access fo
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 
----
-
-Make sure to adjust any placeholders, such as the database URL and GitHub repository link, to match your project's actual settings. This file is now ready for you to paste directly into a `README.md` file.
 
